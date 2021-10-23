@@ -1,0 +1,46 @@
+{
+  "files": {
+    "index.ts": [
+      {
+        "id": "ab35c175-462d-42b0-b60b-31937c45ed66",
+        "line": 1,
+        "version": 0,
+        "index": 0
+      }
+    ],
+    "src/controller/controller.ts": [
+      {
+        "id": "939d0377-1f80-440b-8c4c-1e594a9c10a0",
+        "line": 13,
+        "version": 611,
+        "index": 377
+      }
+    ],
+    "src/index.ts": [
+      {
+        "id": "45a69e5a-eb11-47ab-8558-278909074d99",
+        "line": 10,
+        "version": 1022,
+        "index": 360
+      },
+      {
+        "id": "8bddf8cc-017f-4649-b1d2-68ebc3792996",
+        "line": 10,
+        "version": 1022,
+        "index": 360
+      },
+      {
+        "id": "a15d03d4-630f-44da-b0d5-f7d9c3d3096b",
+        "line": 10,
+        "version": 1022,
+        "index": 360
+      },
+      {
+        "id": "c9e6daec-593b-471d-8745-86918b3f3518",
+        "line": 79,
+        "version": 1022,
+        "index": 3292
+      }
+    ]
+  }
+}
