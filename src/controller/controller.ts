@@ -19,10 +19,12 @@ export async function getTodos(req:Request, res:Response, next:NextFunction):Pro
 export async function postTodos(req:Request,res:Response,next:NextFunction):Promise<any>{
 //multer to local
 
-const file:string = req.file.path;
   try{
   //local to cloud
-    const data = await cloudinary.v2.uploader.upload(
+  let data:any;
+  if(req.file){
+    const file:string = req.file.path;
+    data = await cloudinary.v2.uploader.upload(
           file,
           {
             folder: "awesome-todos",
@@ -35,6 +37,10 @@ const file:string = req.file.path;
             console.log("Successfully uploaded to Cloudinary!");
           }
         );
+    }
+    else{
+      data = {url : "https://play-lh.googleusercontent.com/HUuQc4Zpl6x7fUyX-jFMmcuUbW77REw4UKl5rfhHfP4VY6ctBU1w1I_RZWsXaojFgIo"}
+    }
 
   // cloud to db
     const user = req.user as UserInterface;
@@ -74,7 +80,6 @@ export async function updateTodo(req:Request,res:Response,next:NextFunction):Pro
 
 export async function deleteTodo(req:Request, res:Response,next:NextFunction):Promise<any>{
   try{
-    console.log(req.query.id);
     const todo = await Todo.findOne({_id : req.query.id}).exec();
 
     if(!todo) next();

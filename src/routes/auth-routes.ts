@@ -36,7 +36,6 @@ authRoutes.get("/login/failed", (req:Request, res:Response) => {
 
 // When logout, redirect to client
 authRoutes.get("/logout", (req, res) => {
-  console.log('here in logout');
   req.logout();
   res.redirect(CLIENT_HOME_PAGE_URL);
 });
